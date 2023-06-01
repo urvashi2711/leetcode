@@ -1,5 +1,12 @@
 class Solution {
     public String convertToTitle(int columnNumber) {
-       return columnNumber == 0 ? "" : convertToTitle((columnNumber- 1) / 26) + (char) ((columnNumber - 1) % 26 + 'A'); 
+         StringBuilder sb = new StringBuilder();
+        while(columnNumber > 0){
+            columnNumber--;
+            int curr = columnNumber%26;
+            columnNumber /= 26;
+            sb.append((char)(curr+'A'));
+        }
+        return sb.reverse().toString();
     }
 }
