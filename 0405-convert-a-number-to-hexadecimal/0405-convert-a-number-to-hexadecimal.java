@@ -6,7 +6,7 @@ class Solution {
         String result = "";
         while(num != 0){
             result = map[(num & 15)] + result; 
-            num = (num >>> 4);
+            num = (num >>> 4);// left shift
         }
         return result;
     }
