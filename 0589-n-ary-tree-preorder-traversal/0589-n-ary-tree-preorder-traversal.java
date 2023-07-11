@@ -20,15 +20,14 @@ class Node {
 class Solution {
     private List<Integer> al = new ArrayList<>();
     public List<Integer> preorder(Node root) {
-        traverse(root);
-        return al;
-    }
-    public void traverse(Node root){
-        if(root==null){
-            return;
+       
+         if(root==null){
+            return al;
         }
         al.add(root.val);
         for(Node node: root.children)
-            traverse(node);
+            preorder(node);
+        return al;
     }
+   
 }
