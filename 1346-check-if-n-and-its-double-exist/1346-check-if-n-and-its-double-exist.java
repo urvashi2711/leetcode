@@ -1,9 +1,17 @@
 class Solution {
     public boolean checkIfExist(int[] arr) {
+        Arrays.sort(arr);
         for(int i=0;i<arr.length;i++){
-            for(int j=0;j<arr.length;j++){
-                if(i!=j && arr[i]==2*arr[j]){
+            int target=2*arr[i];
+            int l=0,h=arr.length-1;
+            while(l<=h){
+                int mid=l+(h-l)/2;
+                if(arr[mid]==target&&mid!=i){
                     return true;
+                }else if(arr[mid]<target){
+                    l=mid+1;
+                }else{
+                    h=mid-1;
                 }
             }
         }
