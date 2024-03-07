@@ -16,9 +16,7 @@ class Solution {
             slow=slow.next;
             fast=fast.next.next;
         }
-       // if(fast!=null){
-       //     slow=slow.next;
-       // }
+       
         return slow;
     }
 }
