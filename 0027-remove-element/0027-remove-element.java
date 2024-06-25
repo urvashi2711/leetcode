@@ -9,7 +9,7 @@ class Solution {
             }
             else{
                 nums[k]=nums[i];
-                count++;
+                count++; 
                 k++;
             }
         }
