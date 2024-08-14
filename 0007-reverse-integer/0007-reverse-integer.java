@@ -1,19 +1,17 @@
 class Solution {
     public int reverse(int x) {
-        long finalNum = 0;
+        long revnum = 0;
         while(x!=0){
-            int r=x%10;
-           finalNum = (finalNum*10)+r;
-            x=x/10;
+            int y=x%10;
+            revnum = (revnum*10)+y;
+            x = x/10;
         }
-      
         if(x<0){
-            return (int)(-1*finalNum);
+            return (int)(-1*revnum);
         }
-        if(finalNum>Integer.MAX_VALUE || finalNum<Integer.MIN_VALUE){
+        if(revnum>Integer.MAX_VALUE || revnum<Integer.MIN_VALUE){
             return 0;
         }
-        return (int)finalNum;
+        return (int)revnum;
     }
 }
- 
